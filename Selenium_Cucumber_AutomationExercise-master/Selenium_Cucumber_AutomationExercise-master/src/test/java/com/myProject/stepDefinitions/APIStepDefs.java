@@ -37,8 +37,12 @@ public class APIStepDefs {
                 queryParam("page",pageNumber).
                 when().
                 get().
-                then().
-                log().ifValidationFails().statusCode(HttpStatus.SC_OK).extract().response().jsonPath();
+                then().log().all().statusCode(HttpStatus.SC_OK).extract().jsonPath();
+//        jsonPath = given().
+//                queryParam("page",pageNumber).
+//                when().
+//                get().
+//                then().log().ifValidationFails().statusCode(HttpStatus.SC_OK).extract().jsonPath();
     }
 
 
